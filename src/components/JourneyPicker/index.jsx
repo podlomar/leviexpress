@@ -15,6 +15,7 @@ const CityOptions = ({ cities }) => {
     </>
   );
 };
+
 const DateOptions = ({ dates }) => {
   return (
     <>
@@ -48,9 +49,9 @@ export const JourneyPicker = ({ onJourneyChange }) => {
   };
 
   useEffect(() => {
-    fetch("https://apps.kodim.cz/daweb/leviexpress/api/cities").then(
-      (response) => response.json().then((data) => setCities(data.results))
-    );
+    fetch("https://apps.kodim.cz/daweb/leviexpress/api/cities")
+      .then((response) => response.json())
+      .then((data) => setCities(data.results));
   }, []);
 
   useEffect(() => {
