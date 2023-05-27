@@ -52,12 +52,9 @@ export const JourneyPicker = ({ onJourneyChange }) => {
     fetch("https://apps.kodim.cz/daweb/leviexpress/api/cities")
       .then((response) => response.json())
       .then((data) => setCities(data.results));
-  }, []);
-
-  useEffect(() => {
-    fetch("https://apps.kodim.cz/daweb/leviexpress/api/dates").then(
-      (response) => response.json().then((data) => setDates(data.results))
-    );
+    fetch("https://apps.kodim.cz/daweb/leviexpress/api/dates")
+      .then((response) => response.json())
+      .then((data) => setDates(data.results));
   }, []);
 
   let submitDisabled = false; 
